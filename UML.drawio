@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" modified="2023-12-23T02:15:51.125Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="MUzASL7ek5-Cxr1nh52J" version="22.1.11" type="device">
+  <diagram name="Page-1" id="7Yl1j7hWzFzfxB7Ugltn">
+    <mxGraphModel dx="1138" dy="628" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-18" value="Data Classes" style="swimlane;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="184" y="40" width="460" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-23" value="Supplier" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="TXqBJnMHg3nRR2fo_P6X-18" vertex="1">
+          <mxGeometry x="270" y="40" width="160" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-24" value="+ name: string&lt;br style=&quot;font-size: 12px;&quot;&gt;+ code: unsigned&lt;br style=&quot;font-size: 12px;&quot;&gt;+ address: string&lt;br style=&quot;font-size: 12px;&quot;&gt;+ telephone: string&lt;br style=&quot;font-size: 12px;&quot;&gt;+ email: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-23" vertex="1">
+          <mxGeometry y="26" width="160" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-23" vertex="1">
+          <mxGeometry y="110" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-26" value="+ getData(): void&lt;br style=&quot;border-color: var(--border-color); font-size: 12px;&quot;&gt;+ putData(): void&lt;br style=&quot;border-color: var(--border-color); font-size: 12px;&quot;&gt;+ modifyData(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-23" vertex="1">
+          <mxGeometry y="118" width="160" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-6" value="SparePart" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="TXqBJnMHg3nRR2fo_P6X-18" vertex="1">
+          <mxGeometry x="30" y="45" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-7" value="+ name: string&lt;br style=&quot;font-size: 12px;&quot;&gt;+ number: unsigned&lt;br style=&quot;font-size: 12px;&quot;&gt;+ cost: double&lt;br style=&quot;font-size: 12px;&quot;&gt;+ existingParts: unsigned" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-6" vertex="1">
+          <mxGeometry y="26" width="200" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-6" vertex="1">
+          <mxGeometry y="100" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hUlCYDlnPYXKLQQ7UgIX-9" value="+ getData(): void&lt;br style=&quot;font-size: 12px;&quot;&gt;+ putData(): void&lt;br style=&quot;font-size: 12px;&quot;&gt;+ modifyData(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" parent="hUlCYDlnPYXKLQQ7UgIX-6" vertex="1">
+          <mxGeometry y="108" width="200" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-29" value="Linked List Classes" style="swimlane;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="1">
+          <mxGeometry x="144" y="320" width="540" height="370" as="geometry">
+            <mxRectangle x="144" y="320" width="180" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-1" value="&lt;i&gt;LinkedList&amp;lt;Record, Node&amp;gt;&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-29">
+          <mxGeometry x="180" y="40" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-2" value="+ record: Record&lt;br&gt;+ head: Node*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-1">
+          <mxGeometry y="26" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-1">
+          <mxGeometry y="70" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-4" value="+ insert(Node*): void&lt;br&gt;+ remove(Node*): void&lt;br&gt;+ printList(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-1">
+          <mxGeometry y="78" width="180" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-13" value="SupplierNode" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-29">
+          <mxGeometry x="290" y="200" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-14" value="+ data: Supplier&lt;br style=&quot;font-size: 12px;&quot;&gt;+ next: SupplierNode*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-13">
+          <mxGeometry y="26" width="230" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-13">
+          <mxGeometry y="70" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-16" value="+ data(): Supplier&lt;br style=&quot;font-size: 12px;&quot;&gt;+ next(): SupplierNode*&lt;br&gt;+ setData(Supplier): void&lt;br&gt;+ setNext(SupplierNode*): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-13">
+          <mxGeometry y="78" width="230" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-9" value="SparePartNode" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-29">
+          <mxGeometry x="20" y="200" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-10" value="+ data: SparePart&lt;br style=&quot;font-size: 12px;&quot;&gt;+ next: SparePartNode*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-9">
+          <mxGeometry y="26" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-9">
+          <mxGeometry y="70" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="TXqBJnMHg3nRR2fo_P6X-12" value="+ data(): SparePart&lt;br style=&quot;font-size: 12px;&quot;&gt;+ next(): SparePartNode*&lt;br&gt;+ setData(SparePart): void&lt;br&gt;+ setNext(SparePartNode*): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=JetBrains Mono;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DJetBrains%2BMono;fontSize=12;" vertex="1" parent="TXqBJnMHg3nRR2fo_P6X-9">
+          <mxGeometry y="78" width="240" height="72" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
