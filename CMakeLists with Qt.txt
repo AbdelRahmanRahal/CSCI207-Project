@@ -19,7 +19,14 @@ set(PROJECT_SOURCES
         ../src/mainwindow.cpp
         ../src/mainwindow.h
         ../src/mainwindow.ui
-)
+        ../src/LinkedList.h
+        ../src/SparePart.cpp
+        ../src/SparePart.h
+        ../src/Supplier.cpp
+        ../src/Supplier.h
+        ../src/SparePartNode.h
+        ../src/SupplierNode.h
+    )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CSCI207_Project
