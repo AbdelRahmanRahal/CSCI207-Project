@@ -1,7 +1,3 @@
-//
-// Created by Robin PC on 23/12/2023.
-//
-
 #ifndef CSCI207_PROJECT_SUPPLIERNODE_H
 #define CSCI207_PROJECT_SUPPLIERNODE_H
 
