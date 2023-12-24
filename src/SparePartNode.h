@@ -20,11 +20,11 @@ public:
 		m_next(next) {}
 
 	// Getters
-	SparePart data() { return m_data; }
+	SparePart& data() { return m_data; }
 	SparePartNode* next() { return m_next; }
 
 	// Setters
-	void setData(SparePart &data) { m_data = data; }
+	void setData(SparePart& data) { m_data = data; }
 	void setNext(SparePartNode* next) { m_next = next; }
 };
 

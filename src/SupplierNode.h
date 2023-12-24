@@ -20,11 +20,11 @@ public:
 		m_next(next) {}
 
 	// Getters
-	Supplier data() { return m_data; }
+	Supplier& data() { return m_data; }
 	SupplierNode* next() { return m_next; }
 
 	// Setters
-	void setData(Supplier &data) { m_data = data; }
+	void setData(Supplier& data) { m_data = data; }
 	void setNext(SupplierNode* next) { m_next = next; }
 };
 
