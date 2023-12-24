@@ -26,7 +26,9 @@ public:
 		https://cginternals.github.io/guidelines/articles/getter-setter-naming/
 	*/
 	string name() const { return m_partName; }
-	unsigned number() const { return m_partNumber; }
+	// It's supposed to be number(), but we renamed it to code() to make
+	// it easier to use in conjunction with the binary tree later.
+	unsigned code() const { return m_partNumber; }
 	double cost() const { return m_cost; }
 	unsigned existingParts() const { return m_existingParts; }
 

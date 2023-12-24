@@ -5,7 +5,7 @@ void SparePart::getData() const {
 	cout << endl;
 	cout << "------------------------------" << endl;
 	cout << "Spare part:\t" << name() << endl;
-	cout << "Part number:\t" << number() << endl;
+	cout << "Part number:\t" << code() << endl;
 	cout << "Part cost:\t" << cost() << endl;
 	cout << "Existing parts:\t" << existingParts() << endl;
 }
