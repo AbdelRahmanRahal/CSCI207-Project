@@ -91,7 +91,47 @@ public:
 
 		return curr;
 	}
-};
+	void deleteNode(unsigned code) {
+   deleteNodeHelper(m_root, code);
+}
+
+void deleteNodeHelper(BSTNode<Record, Node>*& node, unsigned code) {
+   if (node == nullptr) {
+       throw std::invalid_argument("Cannot delete a non-existent node.");
+   }
+
+   if (code < node->data().record().code()) {
+       deleteNodeHelper(node->left(), code);
+   } else if (code > node->data().record().code()) {
+       deleteNodeHelper(node->right(), code);
+   } else {
+       if (!node->left() || !node->right()) {
+           BSTNode<Record, Node>* temp = node->left() ? node->left() : node->right();
+
+           if (!temp) {
+               temp = node;
+               node = nullptr;
+           } else {
+               *node = *temp;
+           }
+
+           delete temp;
+       } else {
+           BSTNode<Record, Node>* temp = minValueNode(node->right());
+           node->data() = temp->data();
+           deleteNodeHelper(node->right(), temp->data().record().code());
+       }
+   }
+}
+
+void deleteNode(unsigned code) {
+    /**
+     * Deletes a node with the given code from the BST.
+     *
+     * @param code the code of the node to be deleted
+     */
+    deleteNodeHelper(m_root, code);
+}
 
 
 #endif //CSCI207_PROJECT_BST_H
