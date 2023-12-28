@@ -16,9 +16,11 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         ../src/main.cpp
+        ../src/LogDisplay.h
         ../src/mainwindow.cpp
         ../src/mainwindow.h
-        ../src/mainwindow.ui
+        ../src/BST.h
+        ../src/BSTNode.h
         ../src/LinkedList.h
         ../src/SparePart.cpp
         ../src/SparePart.h
@@ -26,7 +28,7 @@ set(PROJECT_SOURCES
         ../src/Supplier.h
         ../src/SparePartNode.h
         ../src/SupplierNode.h
-    )
+)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CSCI207_Project
