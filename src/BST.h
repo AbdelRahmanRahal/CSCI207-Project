@@ -21,16 +21,23 @@ public:
 
 
 	// Inserting a node
-	void insert(LinkedList<Record, Node> data) {
+	bool insert(LinkedList<Record, Node> data) {
 		BSTNode<Record, Node>* newNode = new BSTNode<Record, Node>(data);
 
-		if (root() == nullptr)
+		if (root() == nullptr) {
 			setRoot(newNode);
+			return true;
+		}
 		else {
 			BSTNode<Record, Node>* parent = nullptr;
 			BSTNode<Record, Node>* curr = root();
 
 			while (curr != nullptr) {
+				if (data.record().code() == curr->data().record().code()) {
+					// Node with same code already exists
+					delete newNode;
+					return false;
+				}
 				parent = curr;
 				if (data.record().code() < curr->data().record().code())
 					curr = curr->left();
@@ -42,6 +49,7 @@ public:
 				parent->setLeft(newNode);
 			else
 				parent->setRight(newNode);
+			return true;
 		}
 	}
 
