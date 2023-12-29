@@ -1,23 +1,37 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "BST.h"
+#include "BSTNode.h"
+#include "SparePart.h"
+#include "SparePartNode.h"
+#include "Supplier.h"
+#include "SupplierNode.h"
+#include <QLineEdit>
 #include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+#include <QPushButton>
+#include <QStandardItemModel>
+#include <QTreeView>
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
-
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+Q_OBJECT
 
 private:
-    Ui::MainWindow *ui;
+	QStandardItemModel *model;
+	QTreeView *treeView;
+	QLineEdit *searchLineEdit;
+	QPushButton *insertButton;
+	QPushButton *deleteButton;
+	BST<Supplier, SparePartNode> supplierBST;
+	BST<SparePart, SupplierNode> sparePartBST;
+
+public:
+	explicit MainWindow(QWidget *parent = nullptr);
+	void updateSupplierTree();
+	void filterNodes(const QString &text);
+	void insertNode();
+	void deleteNode();
 };
+
 #endif // MAINWINDOW_H
