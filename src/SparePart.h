@@ -18,6 +18,15 @@ private:
 	unsigned m_existingParts;
 
 public:
+	// Constructors
+	SparePart(string name, unsigned number, double cost, unsigned existingParts)
+	:	m_partName(name),
+		m_partNumber(number),
+		m_cost(cost),
+		m_existingParts(existingParts) {}
+
+	SparePart() = default;
+
 	// Getters
 	/*
 		Following the naming convention for getters of only using

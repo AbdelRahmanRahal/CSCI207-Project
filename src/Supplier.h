@@ -18,6 +18,16 @@ private:
 	string m_email;
 
 public:
+	// Constructors
+	Supplier(string name, unsigned code, string address, string telephone, string email)
+	:	m_supplierName(name),
+		m_supplierCode(code),
+		m_address(address),
+		m_telephone(telephone),
+		m_email(email) {}
+
+	Supplier() = default;
+
 	// Getters
 	string name() const { return m_supplierName; }
 	unsigned code() const { return m_supplierCode; }
