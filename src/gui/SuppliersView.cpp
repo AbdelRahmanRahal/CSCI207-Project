@@ -166,7 +166,8 @@ void SuppliersView::filterSuppliersTree(const QString &text) {
 		QStandardItem *item = suppliersModel->item(i);
 		// Get the name and code of the item
 		QString name = item->text();
-		QString code = item->child(0)->text().split(": ").last(); // Assuming the code is the first child and is in the format "Code: <code>"
+		// Assuming the code is the first child and is in the format "Code: <code>"
+		QString code = item->child(0)->text().split(": ").last();
 		// Hide or show the item based on whether its name or code matches the search text
 		if (name.contains(text, Qt::CaseInsensitive) || code.contains(text, Qt::CaseInsensitive))
 			suppliersTreeView->setRowHidden(i, QModelIndex(), false);
@@ -236,10 +237,17 @@ void SuppliersView::addSupplier() {
 				tr("Error"),
 				tr("A supplier with the same code already exists.")
 			);
+			string logMessage = "❌ Failed to add supplier: a supplier with the same code (" +
+								std::to_string(code) +
+								") already exists.";
+			log(QString::fromStdString(logMessage));
 			return;
 		}
 
 		updateSuppliersTree();
+
+		string logMessage = "➕ Added supplier: " + name + " (" + std::to_string(code) + ")";
+		log(QString::fromStdString(logMessage));
 	}
 }
 
@@ -265,11 +273,17 @@ void SuppliersView::deleteSupplier() {
 				tr("Error"),
 				tr("A supplier with the given code does not exist.")
 			);
+			string logMessage = "❌ Failed to delete supplier: A supplier with the given code (" +
+								std::to_string(code) +
+								") does not exist.";
+			log(QString::fromStdString(logMessage));
 			return;
 		}
 
-		// Update the model
 		updateSuppliersTree();
+
+		string logMessage = "➖ Removed supplier with code " + std::to_string(code) + ".";
+		log(QString::fromStdString(logMessage));
 	}
 }
 
@@ -302,6 +316,11 @@ void SuppliersView::addSparePart() {
 
 			supplierNode->data().insert(newNode);
 			displaySpareParts(suppliersTreeView->currentIndex());
+
+			string logMessage = "➕ Added spare part to " +
+								supplierNode->data().record().name() +
+								": " + name + " (" + std::to_string(number) + ")";
+			log(QString::fromStdString(logMessage));
 		}
 	}
 }
@@ -349,12 +368,23 @@ void SuppliersView::deleteSparePart() {
 
 				delete currNode;
 				displaySpareParts(suppliersTreeView->currentIndex());
-			} else
+
+				string logMessage = "➖ Removed spare part number " +
+									std::to_string(sparePartCode) +
+									" from " + supplierNode->data().record().name();
+				log(QString::fromStdString(logMessage));
+			}
+			else {
 				QMessageBox::information(
 					this,
 					tr("Error"),
 					tr("No spare part with the given number found.")
 				);
+				string logMessage = "❌ Failed to delete spare part: A spare part with the given number (" +
+									std::to_string(sparePartCode) +
+									") does not exist.";
+				log(QString::fromStdString(logMessage));
+			}
 
 			displaySpareParts(suppliersTreeView->currentIndex());
 		}

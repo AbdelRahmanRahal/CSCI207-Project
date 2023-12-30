@@ -36,6 +36,9 @@ public:
 	void deleteSparePart();
 	void addSupplier();
 	void deleteSupplier();
+
+signals:
+	void log(const QString& message);
 };
 
 #endif //CSCI207_PROJECT_SPAREPARTSVIEW_H

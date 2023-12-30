@@ -36,6 +36,9 @@ public:
 	void deleteSupplier();
 	void addSparePart();
 	void deleteSparePart();
+
+signals:
+	void log(const QString& message);
 };
 
 

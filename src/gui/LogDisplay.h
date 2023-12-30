@@ -9,14 +9,13 @@ class LogDisplay : public QPlainTextEdit {
 Q_OBJECT
 
 public:
-	explicit LogDisplay(QWidget *parent = nullptr)
-			: QPlainTextEdit(parent)
-	{
+	explicit LogDisplay(QWidget *parent = nullptr) : QPlainTextEdit(parent) {
 		setReadOnly(true);
+		setMaximumHeight(125);
+		setPlaceholderText("Press \"Dump Log\" button to show all logged user interactions.");
 	}
 
-	void appendMessage(const QString &text)
-	{
+	void appendMessage(const QString &text) {
 		appendPlainText(text);
 		verticalScrollBar()->setValue(verticalScrollBar()->maximum());
 	}

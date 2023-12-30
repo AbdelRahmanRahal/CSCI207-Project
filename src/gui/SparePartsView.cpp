@@ -235,10 +235,17 @@ void SparePartsView::addSparePart() {
 				tr("Error"),
 				tr("A spare part with the same code already exists.")
 			);
+			string logMessage = "❌ Failed to add spare part: a supplier with the same number (" +
+								std::to_string(number) +
+								") already exists.";
+			log(QString::fromStdString(logMessage));
 			return;
 		}
 
 		updateSparePartsTree();
+
+		string logMessage = "➕ Added spare part: " + name + " (" + std::to_string(number) + ")";
+		log(QString::fromStdString(logMessage));
 	}
 }
 
@@ -246,10 +253,10 @@ void SparePartsView::addSparePart() {
 void SparePartsView::deleteSparePart() {
 	// Show a QInputDialog to get the code of the node to remove
 	bool ok;
-	unsigned code = QInputDialog::getInt(
+	unsigned number = QInputDialog::getInt(
 		this,
 		tr("Delete Spare Part"),
-		tr("Enter the code of the spare part to delete:"),
+		tr("Enter the number of the spare part to delete:"),
 		0,
 		0,
 		INT_MAX,
@@ -258,17 +265,22 @@ void SparePartsView::deleteSparePart() {
 	);
 	if (ok) {
 		// Check if a node with the given code exists, and if so, remove it from the binary tree
-		if (!sparePartsBST.remove(code)) {
+		if (!sparePartsBST.remove(number)) {
 			QMessageBox::information(
 				this,
 				tr("Error"),
-				tr("A spare part with the given code does not exist.")
+				tr("A spare part with the given number does not exist.")
 			);
+			string logMessage = "❌ Failed to delete spare part: A spare part with the given number (" +
+								std::to_string(number) +
+								") does not exist.";
 			return;
 		}
 
-		// Update the model
 		updateSparePartsTree();
+
+		string logMessage = "➖ Removed spare part number " + std::to_string(number) + ".";
+		log(QString::fromStdString(logMessage));
 	}
 }
 
@@ -284,15 +296,15 @@ void SparePartsView::addSupplier() {
 	}
 
 	// Get the spare part from the binary search tree
-	unsigned code = item->child(0)->text().split(": ").last().toUInt();
-	BSTNode<SparePart, SupplierNode>* sparePartNode = sparePartsBST.search(code);
+	unsigned number = item->child(0)->text().split(": ").last().toUInt();
+	BSTNode<SparePart, SupplierNode>* sparePartNode = sparePartsBST.search(number);
 
 	// If the spare part was found, show a dialog to get the supplier data and add it to the spare part's linked list
 	if (sparePartNode != nullptr) {
 		LLSupplierDialog dialog(this);
 		if (dialog.exec() == QDialog::Accepted) {
 			std::string name = dialog.getName();
-			code = dialog.getCode();
+			unsigned code = dialog.getCode();
 			std::string address = dialog.getAddress();
 			std::string telephone = dialog.getTelephone();
 			std::string email = dialog.getEmail();
@@ -302,6 +314,11 @@ void SparePartsView::addSupplier() {
 
 			sparePartNode->data().insert(newNode);
 			displaySuppliers(sparePartsTreeView->currentIndex());
+
+			string logMessage = "➕ Added supplier to " +
+								sparePartNode->data().record().name() +
+								": " + name + " (" + std::to_string(code) + ")";
+			log(QString::fromStdString(logMessage));
 		}
 	}
 }
@@ -349,12 +366,22 @@ void SparePartsView::deleteSupplier() {
 
 				delete currNode;
 				displaySuppliers(sparePartsTreeView->currentIndex());
-			} else
+
+				string logMessage = "➖ Removed supplier with code " +
+									std::to_string(supplierCode) +
+									" from " + sparePartNode->data().record().name();
+				log(QString::fromStdString(logMessage));
+			}else {
 				QMessageBox::information(
 					this,
 					tr("Error"),
 					tr("No supplier with the given code found.")
 				);
+				string logMessage = "❌ Failed to delete supplier: A supplier with the given code (" +
+									std::to_string(supplierCode) +
+									") does not exist.";
+				log(QString::fromStdString(logMessage));
+			}
 
 			displaySuppliers(sparePartsTreeView->currentIndex());
 		}
