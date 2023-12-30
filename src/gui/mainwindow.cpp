@@ -9,6 +9,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 	setMinimumSize(720, 480);
+	setWindowIcon(QIcon(":/assets/icon.png"));
 
 	// Create a QTabBar and a QStackedWidget
 	tabBar = new QTabBar(this);
