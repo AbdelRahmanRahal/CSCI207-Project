@@ -16,18 +16,26 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         ../src/main.cpp
-        ../src/LogDisplay.h
-        ../src/mainwindow.cpp
-        ../src/mainwindow.h
         ../src/BST.h
         ../src/BSTNode.h
         ../src/LinkedList.h
         ../src/SparePart.cpp
         ../src/SparePart.h
+        ../src/SparePartNode.h
         ../src/Supplier.cpp
         ../src/Supplier.h
-        ../src/SparePartNode.h
         ../src/SupplierNode.h
+        ../src/gui/LLSparePartDialog.h
+        ../src/gui/LLSupplierDialog.h
+        ../src/gui/LogDisplay.h
+        ../src/gui/mainwindow.cpp
+        ../src/gui/mainwindow.h
+        ../src/gui/SparePartDialog.h
+        ../src/gui/SparePartsView.cpp
+        ../src/gui/SparePartsView.h
+        ../src/gui/SupplierDialog.h
+        ../src/gui/SuppliersView.cpp
+        ../src/gui/SuppliersView.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
