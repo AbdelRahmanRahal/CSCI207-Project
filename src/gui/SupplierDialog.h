@@ -2,20 +2,19 @@
 #define CSCI207_PROJECT_SUPPLIERDIALOG_H
 
 #include <QDialog>
-#include <QLineEdit>
-#include <QVBoxLayout>
-#include <QPushButton>
-#include <QLabel>
-#include <QMessageBox>
 #include <QIntValidator>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 
 class SupplierDialog : public QDialog {
 Q_OBJECT
 
 public:
-	explicit SupplierDialog(QWidget *parent = nullptr)
-			: QDialog(parent) {
+	explicit SupplierDialog(QWidget *parent = nullptr) : QDialog(parent) {
 		// Create widgets
 		lineEditCode = new QLineEdit(this);
 		lineEditName = new QLineEdit(this);
@@ -30,10 +29,20 @@ public:
 		// Create buttons
 		QPushButton *okButton = new QPushButton("OK", this);
 		okButton->setDefault(true);
-		connect(okButton, &QPushButton::clicked, this, &SupplierDialog::accept);
+		connect(
+			okButton,
+			&QPushButton::clicked,
+			this,
+			&SupplierDialog::accept
+		);
 
 		QPushButton *cancelButton = new QPushButton("Cancel", this);
-		connect(cancelButton, &QPushButton::clicked, this, &SupplierDialog::reject);
+		connect(
+			cancelButton,
+			&QPushButton::clicked,
+			this,
+			&SupplierDialog::reject
+		);
 
 		// Create layout
 		QVBoxLayout *layout = new QVBoxLayout(this);
@@ -72,8 +81,8 @@ protected:
 		}
 	}
 private:
-	QLineEdit *lineEditCode;
 	QLineEdit *lineEditName;
+	QLineEdit *lineEditCode;
 	QLineEdit *lineEditAddress;
 	QLineEdit *lineEditTelephone;
 	QLineEdit *lineEditEmail;
