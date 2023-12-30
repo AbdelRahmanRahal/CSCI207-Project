@@ -46,13 +46,6 @@ public:
 	void setNumber(unsigned number) { m_partNumber = number; }
 	void setCost(double cost) { m_cost = cost; }
 	void setExistingParts(unsigned existingParts) { m_existingParts = existingParts; }
-
-	// Member functions
-	void getData() const;
-
-	void putData();
-
-	void modifyData(); // TODO: Implement method
 };
 
 

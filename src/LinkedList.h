@@ -60,15 +60,6 @@ public:
 			delete toDelete;
 		}
 	}
-
-	// Function to print all nodes in the list
-	void printList() {
-		Node* temp = head();
-		while (temp != nullptr) {
-			temp->data().getData(); // Assuming SparePart and Supplier classes have getData() to print their data
-			temp = temp->next();
-		}
-	}
 };
 
 #endif //CSCI207_PROJECT_LINKEDLIST_H

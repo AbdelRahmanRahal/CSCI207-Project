@@ -41,13 +41,6 @@ public:
 	void setAddress(string &address) { m_address = address; }
 	void setTelephone(string &telephone) { m_telephone = telephone; }
 	void setEmail(string &email) { m_email = email; }
-
-	// Member functions
-	void getData() const;
-
-	void putData();
-
-	void modifyData(); // TODO: Implement method
 };
 
 
