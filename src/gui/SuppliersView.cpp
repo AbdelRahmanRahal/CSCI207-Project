@@ -110,6 +110,7 @@ SuppliersView::SuppliersView(QWidget *parent) : QWidget(parent) {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::updateSuppliersTree() {
 	suppliersModel->clear();
 	QStandardItem *parentItem = suppliersModel->invisibleRootItem();
@@ -160,6 +161,7 @@ void SuppliersView::updateSuppliersTree() {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::filterSuppliersTree(const QString &text) {
 	// Iterate over the items in the model
 	for (int i = 0; i < suppliersModel->rowCount(); ++i) {
@@ -177,6 +179,7 @@ void SuppliersView::filterSuppliersTree(const QString &text) {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::displaySpareParts(const QModelIndex &index) {
 	sparePartsModel->clear();
 	sparePartsModel->setHorizontalHeaderLabels(QStringList() << "Spare parts at selected supplier:");
@@ -216,6 +219,7 @@ void SuppliersView::displaySpareParts(const QModelIndex &index) {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::addSupplier() {
 	// Show a QInputDialog to get the required data for the new node,
 	// check if a node with the given code already exists, and if not,
@@ -252,6 +256,7 @@ void SuppliersView::addSupplier() {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::deleteSupplier() {
 	// Show a QInputDialog to get the code of the node to remove
 	bool ok;
@@ -288,6 +293,7 @@ void SuppliersView::deleteSupplier() {
 }
 
 
+// Time complexity: O(n)
 void SuppliersView::addSparePart() {
 	// Get the selected item
 	QStandardItem *item = suppliersModel->itemFromIndex(suppliersTreeView->currentIndex());
@@ -325,7 +331,7 @@ void SuppliersView::addSparePart() {
 	}
 }
 
-
+// Time complexity: O(n)
 void SuppliersView::deleteSparePart() {
 	// Get the selected item
 	QStandardItem *item = suppliersModel->itemFromIndex(suppliersTreeView->currentIndex());

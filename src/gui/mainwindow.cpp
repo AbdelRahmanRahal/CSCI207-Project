@@ -113,6 +113,7 @@ void MainWindow::log(const QString& message) {
 }
 
 
+// Time complexity: O(n); n = number of messages inside stack
 void MainWindow::dumpLog() {
 	if (logStack.empty()) {
 		logDisplay->appendMessage("⚠️ Log is empty.");

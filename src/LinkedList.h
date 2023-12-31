@@ -22,6 +22,7 @@ public:
 	void setHead(Node* head) { m_head = head; }
 
 	// Function to add a new node at the end of the list
+	// Time complexity: O(n)
 	void insert(Node* node) {
 		// If the list is empty, make the new node the head
 		if (head() == nullptr)
@@ -36,6 +37,7 @@ public:
 	}
 
 	// Function to delete a node from the list
+	// Time complexity: O(n)
 	bool remove(unsigned code) {
 		// Start from the head of the list
 		Node* temp = head();

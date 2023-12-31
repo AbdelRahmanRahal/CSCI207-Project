@@ -21,6 +21,7 @@ public:
 
 
 	// Inserting a node
+	// Time complexity: O(log n)
 	bool insert(LinkedList<Record, Node> data) {
 		BSTNode<Record, Node>* newNode = new BSTNode<Record, Node>(data);
 
@@ -53,7 +54,9 @@ public:
 		}
 	}
 
+
 	// Searching for a node
+	// Time complexity: O(log n)
 	BSTNode<Record, Node>* search(unsigned code) {
 		BSTNode<Record, Node>* curr = root();
 
@@ -70,6 +73,7 @@ public:
 
 
 	// Deleting a node
+	// Time complexity: O(log n)
 	bool remove(unsigned code) {
 		BSTNode<Record, Node>* parent = nullptr;
 		BSTNode<Record, Node>* curr = root();
@@ -129,6 +133,7 @@ public:
 	}
 
 
+	// Time complexity: O(log n)
 	BSTNode<Record, Node>* deleteNodeHelper(BSTNode<Record, Node>* root, unsigned key) {
 		if (root == nullptr) return root;
 
@@ -169,6 +174,7 @@ public:
 
 
 	// Finding the minimum node
+	// Time complexity: O(h); h = the height of the subtree rooted at the node passed
 	BSTNode<Record, Node>* minValueNode(BSTNode<Record, Node>* node = nullptr) {
 		// Cannot set root() as the default parameter, so this does the job.
 		if (node == nullptr)
@@ -184,6 +190,7 @@ public:
 
 
 	// Finding the maximum node
+	// Time complexity: O(h); h = the height of the subtree rooted at the node passed
 	BSTNode<Record, Node>* maxValueNode(BSTNode<Record, Node>* node = nullptr) {
 		if (node == nullptr)
 			node = root();
