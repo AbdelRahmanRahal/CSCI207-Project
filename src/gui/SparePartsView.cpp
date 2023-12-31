@@ -244,7 +244,7 @@ void SparePartsView::addSparePart() {
 
 		updateSparePartsTree();
 
-		string logMessage = "➕ Added spare part: " + name + " (" + std::to_string(number) + ")";
+		string logMessage = "✅ Added spare part: " + name + " (" + std::to_string(number) + ")";
 		log(QString::fromStdString(logMessage));
 	}
 }
@@ -279,7 +279,7 @@ void SparePartsView::deleteSparePart() {
 
 		updateSparePartsTree();
 
-		string logMessage = "➖ Removed spare part number " + std::to_string(number) + ".";
+		string logMessage = "⛔ Removed spare part number " + std::to_string(number) + ".";
 		log(QString::fromStdString(logMessage));
 	}
 }
@@ -315,7 +315,7 @@ void SparePartsView::addSupplier() {
 			sparePartNode->data().insert(newNode);
 			displaySuppliers(sparePartsTreeView->currentIndex());
 
-			string logMessage = "➕ Added supplier to " +
+			string logMessage = "✅ Added supplier to " +
 								sparePartNode->data().record().name() +
 								": " + name + " (" + std::to_string(code) + ")";
 			log(QString::fromStdString(logMessage));
@@ -355,7 +355,7 @@ void SparePartsView::deleteSupplier() {
 			if (sparePartNode->data().remove(supplierCode)) {
 				displaySuppliers(sparePartsTreeView->currentIndex());
 
-				string logMessage = "➖ Removed supplier with code " +
+				string logMessage = "⛔ Removed supplier with code " +
 									std::to_string(supplierCode) +
 									" from " + sparePartNode->data().record().name();
 				log(QString::fromStdString(logMessage));
