@@ -17,8 +17,8 @@ Q_OBJECT
 public:
 	explicit SparePartDialog(QWidget *parent = nullptr) : QDialog(parent) {
 		// Create widgets
-		lineEditName = new QLineEdit(this);
 		lineEditNumber = new QLineEdit(this);
+		lineEditName = new QLineEdit(this);
 		lineEditCost = new QLineEdit(this);
 		lineEditExistingParts = new QLineEdit(this);
 

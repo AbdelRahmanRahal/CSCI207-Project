@@ -16,8 +16,8 @@ Q_OBJECT
 public:
 	explicit LLSupplierDialog(QWidget *parent = nullptr) : QDialog(parent) {
 		// Create widgets
-		lineEditName = new QLineEdit(this);
 		lineEditCode = new QLineEdit(this);
+		lineEditName = new QLineEdit(this);
 		lineEditAddress = new QLineEdit(this);
 		lineEditTelephone = new QLineEdit(this);
 		lineEditEmail = new QLineEdit(this);
