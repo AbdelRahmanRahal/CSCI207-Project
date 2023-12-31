@@ -36,21 +36,23 @@ public:
 	}
 
 	// Function to delete a node from the list
-	void remove(Node* node) {
-		// If the list is empty, do nothing
-		if (head() == nullptr) return;
+	bool remove(unsigned code) {
+		// Start from the head of the list
+		Node* temp = head();
 
-		// If the head node is the one to delete
-		if (head() == node) {
-			Node* temp = head();
-			setHead(head()->next());
-			delete temp;
-			return;
+		// If the list is empty, do nothing
+		if (temp == nullptr) return false;
+
+		// If the node to delete is the head node
+		if (temp->data().code() == code) {
+			Node* toDelete = temp;
+			setHead(temp->next());
+			delete toDelete;
+			return true;
 		}
 
-		// Otherwise, search for the node to delete
-		Node* temp = head();
-		while (temp->next() != nullptr && temp->next() != node)
+		// Otherwise, find the node to delete
+		while (temp->next() != nullptr && temp->next()->data().code() != code)
 			temp = temp->next();
 
 		// If the node was found, delete it
@@ -58,7 +60,11 @@ public:
 			Node* toDelete = temp->next();
 			temp->setNext(temp->next()->next());
 			delete toDelete;
+			return true;
 		}
+
+		// If the node was not found, return false
+		return false;
 	}
 };
 

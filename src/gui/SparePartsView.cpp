@@ -352,26 +352,15 @@ void SparePartsView::deleteSupplier() {
 			&ok
 		);
 		if (ok) {
-			SupplierNode* prevNode = nullptr;
-			SupplierNode* currNode = sparePartNode->data().head();
-			while (currNode != nullptr && currNode->data().code() != supplierCode) {
-				prevNode = currNode;
-				currNode = currNode->next();
-			}
-			if (currNode != nullptr) {
-				if (prevNode == nullptr)
-					sparePartNode->data().setHead(currNode->next());
-				else
-					prevNode->setNext(currNode->next());
-
-				delete currNode;
+			if (sparePartNode->data().remove(supplierCode)) {
 				displaySuppliers(sparePartsTreeView->currentIndex());
 
 				string logMessage = "➖ Removed supplier with code " +
 									std::to_string(supplierCode) +
 									" from " + sparePartNode->data().record().name();
 				log(QString::fromStdString(logMessage));
-			}else {
+			}
+			else {
 				QMessageBox::information(
 					this,
 					tr("Error"),

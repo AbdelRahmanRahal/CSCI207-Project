@@ -354,19 +354,7 @@ void SuppliersView::deleteSparePart() {
 			&ok
 		);
 		if (ok) {
-			SparePartNode* prevNode = nullptr;
-			SparePartNode* currNode = supplierNode->data().head();
-			while (currNode != nullptr && currNode->data().code() != sparePartCode) {
-				prevNode = currNode;
-				currNode = currNode->next();
-			}
-			if (currNode != nullptr) {
-				if (prevNode == nullptr)
-					supplierNode->data().setHead(currNode->next());
-				else
-					prevNode->setNext(currNode->next());
-
-				delete currNode;
+			if (supplierNode->data().remove(sparePartCode)) {
 				displaySpareParts(suppliersTreeView->currentIndex());
 
 				string logMessage = "➖ Removed spare part number " +
